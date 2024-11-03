@@ -140,6 +140,26 @@ test.describe('Connexion test', () => {
                 })
             }
             )
+
+        test('Scenario10 : order with an account connexion in the checkout',
+            {
+                tag: ['@collab'],
+            },
+            async({ Homepage, Listproductpage, ProductPage, page, CartPage, Loginpage, Passpage }) => {
+                await test.step('Search product', async ()=> {
+                    //Add product to cart
+                    await Homepage.selectCatagory();
+                    await Listproductpage.viewPage();
+                    await ProductPage.addToCart();
+                    await ProductPage.goToCart();
+                    await CartPage.Pay();
+                    await Loginpage.connexion();
+                    await Passpage.connexion();
+                    await Homepage.verif();
+                    await page.waitForTimeout(1000);
+                })
+            }
+            )
 })
 
 /*test.describe('Checkout Process', () => {
