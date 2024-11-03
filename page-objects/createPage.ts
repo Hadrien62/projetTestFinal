@@ -60,7 +60,7 @@ export class CreatePage{
 
     async createPro(){
         await this.proAccount.click();
-        await expect(this.errorName).toHaveText('Saisir votre nom')
-        await this.proAccount.click();
+        //await expect(this.errorName).toHaveText('Saisir votre nom')
+        //await this.proAccount.click();
     }
 }

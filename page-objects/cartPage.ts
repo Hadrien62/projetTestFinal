@@ -43,6 +43,11 @@ export class CartPage {
     }
 
     async clickConfirmButton() {
-        await this.page.click('#bottomSubmitOrderButtonId'); 
+        await this.page.click('#turbo-checkout-pyo-button'); 
+    }
+
+
+    async changeItemQuantity() {
+    await this.page.selectOption('[data-feature-id="sc-update-quantity-input"]', "2"); 
     }
 }

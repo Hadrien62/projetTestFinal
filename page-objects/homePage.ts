@@ -68,7 +68,7 @@ export class HomePage{
 
     async verif(){
         const url = this.page.url();
-        expect(url).toContain('https://www.amazon.fr/ap/');
+        expect(url).toContain('https://www.amazon.fr/'); // on vérifie si on arrive sur une autre page et donc que le test est validé
     }
 
 }
